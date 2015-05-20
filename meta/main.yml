@@ -3,7 +3,7 @@ galaxy_info:
   author: "André Nishitani"
   company: Jacto
   license: Apache
-  min_ansible_version: 1.3
+  min_ansible_version: 1.4
   platforms:
    - name: Ubuntu
      versions:
