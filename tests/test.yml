@@ -1,0 +1,5 @@
+---
+- name: runs glassfish setup playbook tests
+  hosts: localhost
+  roles:
+    - ansible-glassfish
