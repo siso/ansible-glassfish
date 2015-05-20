@@ -1,6 +1,8 @@
 ---
 language: 'python'
 python: '2.7'
+# don't send email notification
+email: false
 
 before_install: 
   # updates packages
@@ -11,7 +13,7 @@ install:
   - sudo pip install ansible
 
   # Sets the upper directory as roles container
-  - "printf '[defaults]\nroles_path = ../' > ansible.cfg"
+  - printf '[defaults]\nroles_path = ../' > ansible.cfg
 
 script:
   - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
