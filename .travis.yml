@@ -10,5 +10,8 @@ install:
   # installs ansible
   - sudo pip install ansible
 
+  # Sets the upper directory as roles container
+  - "printf '[defaults]\nroles_path = ../' > ansible.cfg"
+
 script:
   - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
