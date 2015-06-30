@@ -4,10 +4,6 @@ python: '2.7'
 # don't send email notification
 email: false
 
-before_install: 
-  # updates packages
-  - sudo apt-get update -qq
-
 install:
   # installs ansible
   - sudo pip install ansible

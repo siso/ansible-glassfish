@@ -5,8 +5,13 @@
     - unzip
     - openjdk-7-jre
 
+- name: checks if glassfish server is installed
+  stat: path={{glassfish_dir}}
+  register: folder
+
 - name: downloads glassfish package
-  get_url: url=http://download.java.net/glassfish/{{ gf_version }}/release/glassfish-{{ gf_version }}.zip dest=/tmp/glassfish-{{ gf_version }}.zip
+  get_url: url={{glassfish_url}} dest=/tmp/glassfish-{{ glassfish_version }}.zip
+  when: not folder.stat.exists
 
 - name: creates the glassfish group
   group: name=glassfish state=present
@@ -15,4 +20,5 @@
   user: name=glassfish group=glassfish state=present system=true append=yes
 
 - name: unzips glassfish package
-  unarchive: src=/tmp/glassfish-{{ gf_version }}.zip dest=/opt owner=glassfish
+  unarchive: src=/tmp/glassfish-{{ glassfish_version }}.zip dest={{glassfish_install_dir}} owner=glassfish
+  when: not folder.stat.exists
