@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/anishitani/ansible-glassfish.svg?branch=master)](https://travis-ci.org/anishitani ansible-glassfish)
+[![Build Status](https://travis-ci.org/anishitani/ansible-glassfish.svg?branch=develop)](https://travis-ci.org/anishitani ansible-glassfish)
 
 # ansible-glassfish 
 
