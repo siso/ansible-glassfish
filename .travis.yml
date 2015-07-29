@@ -3,6 +3,7 @@ language: 'python'
 python: '2.7'
 # don't send email notification
 email: false
+sudo: false
 
 install:
   # installs ansible
