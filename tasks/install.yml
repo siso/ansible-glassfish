@@ -5,11 +5,13 @@
   get_url: url={{ gf_url }} dest=/tmp/glassfish-{{ gf_version }}.zip
 
 - name: creates the glassfish group
+  sudo: true
   group: 
     name: glassfish 
     state: present
 
 - name: creates the glassfish user
+  sudo: true
   user: 
     name: glassfish 
     group: glassfish 
@@ -18,4 +20,5 @@
     append: true
 
 - name: unzips glassfish package
+  sudo: true
   unarchive: src=/tmp/glassfish-{{ gf_version }}.zip dest={{ gf_install_dir }} owner=glassfish
