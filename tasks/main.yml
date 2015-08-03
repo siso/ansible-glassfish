@@ -1,24 +1,7 @@
 ---
-- name: installs unzip and java
-  apt: name={{ item }} state=latest
-  with_items:
-    - unzip
-    - openjdk-7-jre
-
 - name: checks if glassfish server is installed
-  stat: path={{glassfish_dir}}
+  stat: path={{ gf_dir }}
   register: folder
 
-- name: downloads glassfish package
-  get_url: url={{glassfish_url}} dest=/tmp/glassfish-{{ glassfish_version }}.zip
-  when: not folder.stat.exists
-
-- name: creates the glassfish group
-  group: name=glassfish state=present
-
-- name: creates the glassfish user
-  user: name=glassfish group=glassfish state=present system=true append=yes
-
-- name: unzips glassfish package
-  unarchive: src=/tmp/glassfish-{{ glassfish_version }}.zip dest={{glassfish_install_dir}} owner=glassfish
-  when: not folder.stat.exists
+- include: install.yml
+  when: not folder.stat.exists or gf_force_install

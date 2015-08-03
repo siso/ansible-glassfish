@@ -1,16 +1,15 @@
 ---
-
-# Glassifhs package minor and major version
-glassfish_major_version: '3'
-glassfish_minor_version: '1.2.2'
-
 # Glassfish version
-glassfish_version: '{{glassfish_major_version}}.{{glassfish_minor_version}}'
+gf_version: 3.1.2.2
 
-glassfish_url: 'http://download.java.net/glassfish/{{ glassfish_version }}/release/glassfish-{{ glassfish_version }}.zip'
+# URL with Glassfish package
+gf_url: "http://download.java.net/glassfish/{{ gf_version }}/release/glassfish-{{ gf_version }}.zip"
 
-# glassfish_install_dir: directory where the package should be extracted 
-glassfish_install_dir: '/opt'
+# directory where the package should be extracted 
+gf_install_dir: "/opt"
         
-# glassfish_dir: directory with the glassfish setup
-glassfish_dir: '{{ glassfish_install_dir }}/glassfish{{ glassfish_major_version }}'
+# directory with the glassfish setup
+gf_dir: "{{ gf_install_dir }}/glassfish{{ gf_version[0] }}"
+
+# installs glassfish over the old folder
+gf_force_install: false

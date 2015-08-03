@@ -1,0 +1,21 @@
+---
+- include: dependencies.yml
+
+- name: downloads glassfish package
+  get_url: url={{ gf_url }} dest=/tmp/glassfish-{{ gf_version }}.zip
+
+- name: creates the glassfish group
+  group: 
+    name: glassfish 
+    state: present
+
+- name: creates the glassfish user
+  user: 
+    name: glassfish 
+    group: glassfish 
+    state: present 
+    system: true 
+    append: true
+
+- name: unzips glassfish package
+  unarchive: src=/tmp/glassfish-{{ gf_version }}.zip dest={{ gf_install_dir }} owner=glassfish
