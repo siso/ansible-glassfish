@@ -13,3 +13,8 @@ gf_dir: "{{ gf_install_dir }}/glassfish{{ gf_version[0] }}"
 
 # installs glassfish over the old folder
 gf_force_install: false
+
+# Glassfish service user
+gf_user: glassfish
+# Glassfish service group
+gf_groupd: glassfish

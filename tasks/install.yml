@@ -2,7 +2,9 @@
 - include: dependencies.yml
 
 - name: downloads glassfish package
-  get_url: url={{ gf_url }} dest=/tmp/glassfish-{{ gf_version }}.zip
+  get_url: 
+    url: "{{ gf_url }}" 
+    dest: "/tmp/glassfish-{{ gf_version }}.zip"
 
 - name: creates the glassfish group
   sudo: true
@@ -20,4 +22,11 @@
     append: true
 
 - name: unzips glassfish package
-  unarchive: src=/tmp/glassfish-{{ gf_version }}.zip dest={{ gf_install_dir }} owner=glassfish
+  sudo: true
+  unarchive: src=/tmp/glassfish-{{ gf_version }}.zip dest={{ gf_install_dir }}
+  
+- name: changes group owner of the glassfish folder
+  file:
+    path: {{ gf_install_dir }}
+    owner: {{ gf_user }}
+    group: {{ gf_group }}
