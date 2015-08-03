@@ -27,6 +27,6 @@
   
 - name: changes group owner of the glassfish folder
   file:
-    path: {{ gf_install_dir }}
-    owner: {{ gf_user }}
-    group: {{ gf_group }}
+    path: "{{ gf_install_dir }}"
+    owner: "{{ gf_user }}"
+    group: "{{ gf_group }}"
