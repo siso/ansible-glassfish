@@ -17,4 +17,4 @@ gf_force_install: false
 # Glassfish service user
 gf_user: glassfish
 # Glassfish service group
-gf_groupd: glassfish
+gf_group: glassfish
