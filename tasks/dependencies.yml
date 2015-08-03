@@ -1,5 +1,6 @@
 ---
-- name: installs apt dependencies
+- name: installing dependencies
   apt: name={{ item }} state=latest
   with_items:
-    - unzip
+    - unzip   # package decompression
+    - wget    # package download
