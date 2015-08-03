@@ -26,6 +26,7 @@
   unarchive: src=/tmp/glassfish-{{ gf_version }}.zip dest={{ gf_install_dir }}
   
 - name: changes group owner of the glassfish folder
+  sudo: true
   file:
     path: "{{ gf_install_dir }}"
     owner: "{{ gf_user }}"
