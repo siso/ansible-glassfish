@@ -20,5 +20,4 @@
     append: true
 
 - name: unzips glassfish package
-  sudo: true
   unarchive: src=/tmp/glassfish-{{ gf_version }}.zip dest={{ gf_install_dir }} owner=glassfish
