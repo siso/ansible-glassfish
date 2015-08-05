@@ -1,11 +1,11 @@
-[![Build Status](https://semaphoreci.com/api/v1/projects/53f65a03-6dcd-4764-a3d2-07bd7624514c/500177/badge.svg)](https://semaphoreci.com/anishitani/ansible-glassfish)
+[![Build Status](https://semaphoreci.com/api/v1/projects/cd276927-e415-42ae-a2b1-2f79c7301f0d/500373/badge.svg)](https://semaphoreci.com/anishitani/ansible-glassfish)   
 
 # ansible-glassfish
 
 Ansible playbook to setup Glassfish server.
 
 ### Version
-	- 0.0.2
+	- 0.0.4
 
 #### Supported Glassfish versions:
   
